@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8267290121618134879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8267290121618134877}
+  - component: {fileID: 8267290121618134878}
+  - component: {fileID: 3868436176882212060}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8267290121618134877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267290121618134879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7685356, y: 2.1218138, z: -0.71671486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8267290121618134878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267290121618134879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198f5f07daa68724780c6ca7ed0fbbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridTilePrefab: {fileID: 7141014642709558513, guid: 09d8d8d1fe8a1a6459d2e5929c08e3a5,
+    type: 3}
+  gridPathPrefab: {fileID: 7141014642709558513, guid: c8af95027d95f384b8da40152490d3c3,
+    type: 3}
+  enemyPrefab: {fileID: 2405306364623005702, guid: df584a39fa4ea5d45b4ee35da0380020,
+    type: 3}
+  selectorPrefab: {fileID: 4764681301885931803, guid: 5e3f89f069fa27a498120d1d83173871,
+    type: 3}
+  enemyPrefabs:
+  - {fileID: 2405306364623005702, guid: df584a39fa4ea5d45b4ee35da0380020, type: 3}
+  - {fileID: 2405306364623005702, guid: a229b0ae2c0b38341b3f14d6c3bb4877, type: 3}
+  - {fileID: 2405306364623005702, guid: 80c6e26e368af29459b6881c95581fb5, type: 3}
+  - {fileID: 2405306364623005702, guid: 9de27250de60ccb4fbfcd92ad7d7f75f, type: 3}
+  - {fileID: 2405306364623005702, guid: 4e1dd7d214ef55f4f89bf9ebd3e8de3e, type: 3}
+  buildingPrefabs:
+  - {fileID: 2596501787841602411, guid: 2cda025d9067f234faff5954d95a2168, type: 3}
+  - {fileID: 2596501787841602411, guid: 9ae9be16f7216944f89913e7ec1be48b, type: 3}
+  - {fileID: 2596501787841602411, guid: 6a1bca0280306e748a4daecd49eed044, type: 3}
+  - {fileID: 2596501787841602411, guid: 546f3674956b36143b4b3f14d5cfa53e, type: 3}
+  enemyPath:
+  - {x: 1, y: 1}
+  - {x: 2, y: 1}
+  - {x: 3, y: 1}
+  - {x: 4, y: 1}
+  - {x: 5, y: 1}
+  - {x: 6, y: 1}
+  - {x: 7, y: 1}
+  - {x: 8, y: 1}
+  - {x: 9, y: 1}
+  - {x: 10, y: 1}
+  - {x: 10, y: 2}
+  - {x: 10, y: 3}
+  - {x: 10, y: 4}
+  - {x: 9, y: 4}
+  - {x: 8, y: 4}
+  - {x: 7, y: 4}
+  - {x: 6, y: 4}
+  - {x: 5, y: 4}
+  - {x: 4, y: 4}
+  - {x: 3, y: 4}
+  - {x: 2, y: 4}
+  - {x: 1, y: 4}
+  - {x: 1, y: 5}
+  - {x: 1, y: 6}
+  - {x: 1, y: 7}
+  - {x: 2, y: 7}
+  - {x: 3, y: 7}
+  - {x: 4, y: 7}
+  - {x: 5, y: 7}
+  - {x: 6, y: 7}
+  - {x: 7, y: 7}
+  - {x: 8, y: 7}
+  - {x: 9, y: 7}
+  - {x: 10, y: 7}
+  - {x: 10, y: 8}
+  - {x: 10, y: 9}
+  - {x: 10, y: 10}
+  - {x: 9, y: 10}
+  - {x: 8, y: 10}
+  - {x: 7, y: 10}
+  - {x: 6, y: 10}
+  - {x: 5, y: 10}
+  - {x: 4, y: 10}
+  - {x: 3, y: 10}
+  - {x: 2, y: 10}
+  - {x: 1, y: 10}
+  playerHealth: 10
+  minUnitsPerWave: 2
+  maxUnitsPerWave: 6
+  unitAddon: 1
+  currentWave: 1
+  enemies:
+  - {fileID: 2405306364623005703, guid: df584a39fa4ea5d45b4ee35da0380020, type: 3}
+  - {fileID: 2405306364623005703, guid: a229b0ae2c0b38341b3f14d6c3bb4877, type: 3}
+  - {fileID: 2405306364623005703, guid: 80c6e26e368af29459b6881c95581fb5, type: 3}
+  - {fileID: 2405306364623005703, guid: 9de27250de60ccb4fbfcd92ad7d7f75f, type: 3}
+  - {fileID: 2405306364623005703, guid: 4e1dd7d214ef55f4f89bf9ebd3e8de3e, type: 3}
+  - {fileID: 2405306364623005703, guid: c8d1685657896e145944c475f2ce820f, type: 3}
+  tower1Price: 250
+  enemyHealthIncrement: 0
+--- !u!114 &3868436176882212060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267290121618134879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec29724100a0da41abf59718cfa5cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balance: 500
+  balanceAddon: 50
+  startTimer: 2

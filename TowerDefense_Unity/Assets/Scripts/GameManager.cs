@@ -4,18 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     [Header("Game Objects")]
     public GameObject gridTilePrefab;
     public GameObject gridPathPrefab;
-    public GameObject enemyPrefab;  
+    public GameObject enemyPrefab;
     public GameObject selectorPrefab;
+    public GameObject[] enemyPrefabs;
 
     [Header("Grid Coordinates")]
-    public GameObject[] enemyPrefabs;
     public GameObject[,] grid;
-    public GameObject[,] buildings; 
+    public GameObject[,] buildings;
     public GameObject[] buildingPrefabs;
     public Vector2Int[] enemyPath;
 
@@ -41,18 +40,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake() => Startup();
 
-    private void Update()
-    {
+    private void Update() {
         PlayerDies();
 
-        if (currentWave % 5 == 0)
-        {
+        if (currentWave % 5 == 0) {
             unitAddon++;
         }
     }
 
-    private void Startup()
-    {
+    private void Startup() {
         DontDestroyOnLoad(gameObject);
         Instance = this;
 
@@ -60,17 +56,13 @@ public class GameManager : MonoBehaviour
 
         grid = new GameObject[size, size];
         buildings = new GameObject[size, size];
-        for (int x = 0; x < size; x++)
-        {
-            for (int y = 0; y < size; y++)
-            {
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
                 GameObject prefab = null;
-                if (Array.IndexOf(enemyPath, new Vector2Int(x, y)) == -1)
-                {
+                if (Array.IndexOf(enemyPath, new Vector2Int(x, y)) == -1) {
                     prefab = gridTilePrefab;
                 }
-                else
-                {
+                else {
                     prefab = gridPathPrefab;
                 }
                 grid[y, x] = Instantiate(prefab, new Vector3(x, y), Quaternion.identity);
@@ -84,19 +76,16 @@ public class GameManager : MonoBehaviour
     //public void RegisterTowerSlowDown(SlowDownTower slowDownTower) => slowDownTowers.Add(slowDownTower);
     public void RegisterEnemy(Enemy enemy) => enemies.Add(enemy);
     public void HandleEnemyDeath(Enemy enemy) => enemies.Remove(enemy);
-    public void DamagePlayer(int damage) => playerHealth = Mathf.Clamp(playerHealth - damage, 0, int.MaxValue); 
+    public void DamagePlayer(int damage) => playerHealth = Mathf.Clamp(playerHealth - damage, 0, int.MaxValue);
 
-    private IEnumerator SpawnWavesAsync()
-    {
-        while (true)
-        {
+    private IEnumerator SpawnWavesAsync() {
+        while (true) {
             yield return StartCoroutine(SpawnUnitAsync());
             yield return new WaitForSeconds(spawnDelay);
         }
     }
 
-    private IEnumerator SpawnUnitAsync()
-    {
+    private IEnumerator SpawnUnitAsync() {
         int unitCounter = 0;
         int numUnits = UnityEngine.Random.Range(minUnitsPerWave, maxUnitsPerWave);
         int randomEnemies = UnityEngine.Random.Range(0, enemyPrefabs.Length);
@@ -110,30 +99,25 @@ public class GameManager : MonoBehaviour
 
         print("WaveCount: " + currentWave);
 
-        while (unitCounter <= numUnits)
-        {
+        while (unitCounter <= numUnits) {
             Instantiate(enemyPrefabs[randomEnemies]);
             unitCounter++;
 
-            if (unitCounter < numUnits)
-            {
+            if (unitCounter < numUnits) {
                 yield return new WaitForSeconds(spawnInterval);
             }
         }
     }
 
-    private void PlayerDies()
-    {
-        if (playerHealth <= 0)
-        {
+    private void PlayerDies() {
+        if (playerHealth <= 0) {
             playerHealth = 10;
-            //Restart();
+            Restart();
             print("Loaded Scene");
         }
     }
 
-    private void Restart()
-    {
+    private void Restart() {
         SceneManager.LoadScene(0);
         Startup();
     }

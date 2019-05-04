@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour {
     private void PlayerDies() {
         if (playerHealth <= 0) {
             playerHealth = 10;
-            Restart();
+            //Restart();
             print("Loaded Scene");
         }
     }

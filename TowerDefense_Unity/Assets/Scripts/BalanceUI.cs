@@ -9,5 +9,5 @@ public class BalanceUI : MonoBehaviour
     private Balance balance;
 
     void Start() => balance = FindObjectOfType<Balance>();
-    void Update() => balanceText.text = balance.balance.ToString();
+    void Update() => balanceText.text = (balance.balance.ToString() + "$");
 }
